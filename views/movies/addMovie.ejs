@@ -27,9 +27,12 @@
         <div class="logo-container"><h1 class="logo">Metflix</h1></div>
         <div class="menu-container">
           <ul class="menu-list">
-            <li class="menu-list-item">Home</li>
+            <li class="menu-list-item" onclick="location.href='/'">Home</li>
             <li class="menu-list-item">All Movies</li>
             <li class="menu-list-item">Categories</li>
+            <li class="menu-list-item" onclick="location.href='/addMovie'">
+              Add Movie
+            </li>
           </ul>
         </div>
         <div class="profile-container">
@@ -128,5 +131,7 @@
         <button type="submit">Save</button>
       </form>
     </div>
+
+    <script type="text/javascript" src="../public/app.js"></script>
   </body>
 </html>
