@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Design</title>
+    <link href= "/public/style/style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  </head>
+    <div class="navbar">
+      <div class ="navbar-container">
+        <div class="logo-container"><h1 class="logo">Metflix</h1></div>
+        <div class="menu-container">
+          <ul class = "menu-list">
+            <li class="menu-list-item-active">Home</li>
+            <li class="menu-list-item">Movies</li>
+            <li class="menu-list-item">Series</li>
+            <li class="menu-list-item">Popular</li>
+            <li class="menu-list-item">Trends</li>
+          </ul>
+      </div>
+        <div class="profile-container">
+          <img class="profile-picture" src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" alt="">
+          <div class="profile-text-container">
+            <span class=""profile-text>Profile</span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <div class="toggle">
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <div class="toggle-ball"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <i class="left-menu-icon fa-solid fa-magnifying-glass"></i>
+      <i class="left-menu-icon fa-solid fa-house"></i>
+      <i class="left-menu-icon fa-solid fa-users"></i>
+      <i class="left-menu-icon fa-solid fa-bookmark"></i>
+      <i class="left-menu-icon fa-solid fa-tv"></i>
+      <i class="left-menu-icon fa-solid fa-hourglass-start"></i>
+      <i class="left-menu-icon fa-solid fa-cart-shopping"></i>
+      
+    </div>
+    <div class="container">
+      <div class="content-container">
+        <div class="featured-content"
+        style="background: linear-gradient(to bottom, rgba(71, 71, 71, 0.123),#151515), url(https://media.istockphoto.com/vectors/modern-cinema-background-realistic-film-strips-in-perspective-wave-vector-id1204686514?b=1&k=20&m=1204686514&s=170667a&w=0&h=Z_xI0ci6Pru6SOD6rDKq6KsncwAHgIqDoN4XVWFAyi4=);">
+        
+        <img class="featured-title" src="https://www.cnet.com/a/img/resize/7d35a36683715acad7b7052386da4f45147ab1a5/hub/2021/02/24/4b46f976-ada0-4db4-bbcf-9b42ea708f50/spider-man-no-way-home.jpg?auto=webp&fit=crop&height=675&width=1200">
+        <p class="featured-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <button class="featured-button">WATCH</button>
+      </div>
+      <div class="movie-list-container">
+        <h1 class="movie-list-title">NEW RELEASES</h1>
+        <div class="movie-list-wrapper">
+
+          <div class="movie-list">
+
+              <% movieList.forEach(movie => { %>
+                <div class="movie-list-item">
+                <img class="movie-list-item-img" src=<%=movie.url%>>
+                <span class="movie-list-item-title"><%= movie.title %></span>
+                <p class="movie-list-item-desc"><%= movie.description %></p>
+                <button class="movie-list-item-button">Watch</button>
+                <!-- <h4><%= movie.year %></h4> -->
+              </div>
+                <% }) %>
+
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </div>
+      </div>
+
+
+
+      <div class="movie-list-container">
+        <h1 class="movie-list-title">POPULAR</h1>
+        <div class="movie-list-wrapper">
+          <div class="movie-list">
+            <div class="movie-list-item">
+              <img class="movie-list-item-img" src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219625/tgmdomonlinedigitalkeyartt-cruisestandingjetv10.jpg">
+              <span class="movie-list-item-title">Top Gun</span>
+              <p class="movie-list-item-desc">Lorem ipsum dolor cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button class="movie-list-item-button">Watch</button>
+            </div>
+            <div class="movie-list-item">
+              <img class="movie-list-item-img" src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219625/tgmdomonlinedigitalkeyartt-cruisestandingjetv10.jpg">
+              <span class="movie-list-item-title">Top Gun</span>
+              <p class="movie-list-item-desc">Lorem ipsum dolor cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button class="movie-list-item-button">Watch</button>
+            </div>
+            <div class="movie-list-item">
+              <img class="movie-list-item-img" src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219625/tgmdomonlinedigitalkeyartt-cruisestandingjetv10.jpg">
+              <span class="movie-list-item-title">Top Gun</span>
+              <p class="movie-list-item-desc">Lorem ipsum dolor cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button class="movie-list-item-button">Watch</button>
+            </div>
+            <div class="movie-list-item">
+              <img class="movie-list-item-img" src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219625/tgmdomonlinedigitalkeyartt-cruisestandingjetv10.jpg">
+              <span class="movie-list-item-title">Top Gun</span>
+              <p class="movie-list-item-desc">Lorem ipsum dolor cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button class="movie-list-item-button">Watch</button>
+            </div>
+            <div class="movie-list-item">
+              <img class="movie-list-item-img" src="https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219625/tgmdomonlinedigitalkeyartt-cruisestandingjetv10.jpg">
+              <span class="movie-list-item-title">Top Gun</span>
+              <p class="movie-list-item-desc">Lorem ipsum dolor cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button class="movie-list-item-button">Watch</button>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </div>
+      </div>
+
+     
+    </div>
+ 
+    <script src="../app.js"></script>
+  </body>
+</html>
