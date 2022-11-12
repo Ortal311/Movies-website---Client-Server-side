@@ -9,6 +9,12 @@ router.get("/addMovie", (req, res) => {
   res.render("movies/addMovie.ejs");
 });
 
-router.post("/add", Movie.addMovie);
+router.get("/editMovie/:id", (req, res) => {
+  res.render("movies/editMovie.ejs", { movieId: req.params.id });
+});
+
+router.post("/addMovie", Movie.addMovie);
+
+router.post("/editMovie/:id", Movie.editMovie);
 
 module.exports = router;

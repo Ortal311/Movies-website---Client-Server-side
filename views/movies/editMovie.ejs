@@ -14,9 +14,9 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="mb-4">Add Movie</h1>
+      <h1 class="mb-4">Edit Movie</h1>
 
-      <form action="/addMovie" method="POST">
+      <form action="/editMovie/<%= movieId %>?_method=PUT" method="POST">
         <!-- after done goes to POST method-->
         <div class="form-group">
           <label for="title">Title</label>

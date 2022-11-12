@@ -38,7 +38,37 @@ const addMovie = async (req, res, next) => {
   });
 };
 
+const editMovie = async (req, res, next) => {
+  try {
+    const exists = await Movie.updateOne(
+      { _id: req.params.id },
+      {
+        title: req.body.title,
+        description: req.body.description,
+        year: req.body.year,
+        url: req.body.url,
+      }
+    );
+    const updateMovie = await Movie.findById(req.params.id);
+    if (exists == null) return sendError(res, 400, "movie does not exist");
+    else {
+      console.log("INSIDE EDIT MOVIE!!!! - add redirected page");
+
+      res.status(200).send({
+        status: "OK",
+        _id: updateMovie._id,
+      });
+    }
+  } catch (err) {
+    res.status(400).send({
+      status: "fail",
+      error: err.message,
+    });
+  }
+};
+
 module.exports = {
   getAllMovies,
   addMovie,
+  editMovie,
 };
