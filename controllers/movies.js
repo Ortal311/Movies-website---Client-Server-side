@@ -10,6 +10,21 @@ const getAllMovies = async (req, res, next) => {
   });
 };
 
+const getMovieById = async (req, res, next) => {
+  try {
+    console.log(req.params.id);
+    const movie = await Movie.findById(req.params.id);
+
+    res.render("detailsMovie.ejs", { movie: movie });
+  } catch (err) {
+    console.log(err);
+    // res.status(400).send({
+    //   status: "fail",
+    //   error: err.message,
+    // });
+  }
+};
+
 const addMovie = async (req, res, next) => {
   var title = req.body.title;
   var description = req.body.description;
@@ -73,4 +88,5 @@ module.exports = {
   getAllMovies,
   addMovie,
   editMovie,
+  getMovieById,
 };
