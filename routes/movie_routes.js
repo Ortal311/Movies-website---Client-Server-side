@@ -9,8 +9,9 @@ router.get("/addMovie", (req, res) => {
   res.render("movies/addMovie.ejs");
 });
 
-router.get("/editMovie/:id", (req, res) => {
-  res.render("movies/editMovie.ejs", { movieId: req.params.id });
+router.get("/editMovie/:id", async (req, res) => {
+  const movie = await MovieModel.findById(req.params.id);
+  res.render("movies/editMovie.ejs", { movie: movie });
 });
 
 router.get("/detailsMovie/:id", async (req, res) => {

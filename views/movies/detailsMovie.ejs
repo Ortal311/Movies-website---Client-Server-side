@@ -51,7 +51,11 @@
           
               <h1 class="featured-des"><%= movie.title%></h1>
               <p class="featured-desc"><%= movie.description%></p>
-              <button class="featured-button">WATCH</button>
+                   <a href="/editMovie/<%= movie._id %>" class="edit-button">Edit</a>
+
+              <form action="/articles/<%= movie._id %>?_method=DELETE" method="POST" class="d-inline">
+                <button type="submit" class="delete-button">Delete</button>
+              </form>
             </div>
             <img class="featured-img" src=<%= movie.url%>>
         </div>

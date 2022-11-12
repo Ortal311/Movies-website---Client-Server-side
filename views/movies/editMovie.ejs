@@ -2,57 +2,134 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Movie</title>
+    <link href="/public/style/style.css" rel="stylesheet" type="text/css" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Blog</title>
+    /> -->
   </head>
   <body>
+    <div class="navbar">
+      <div class="navbar-container">
+        <div class="logo-container"><h1 class="logo">Metflix</h1></div>
+        <div class="menu-container">
+          <ul class="menu-list">
+            <li class="menu-list-item" onclick="location.href='/'">Home</li>
+            <li class="menu-list-item">All Movies</li>
+            <li class="menu-list-item">Categories</li>
+            <li class="menu-list-item" onclick="location.href='/addMovie'">
+              Add Movie
+            </li>
+          </ul>
+        </div>
+        <div class="profile-container">
+          <img
+            class="profile-picture"
+            src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"
+            alt=""
+          />
+          <div class="profile-text-container">
+            <span class="" profile-text>Profile</span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <div class="toggle">
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <div class="toggle-ball"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <h1 class="mb-4">Edit Movie</h1>
 
-      <form action="/editMovie/<%= movieId %>?_method=PUT" method="POST">
+      <form action="/editMovie/<%= movie._id %>?_method=PUT" method="POST">
         <!-- after done goes to POST method-->
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" name="title" id="title" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <textarea
-            required
-            name="description"
-            id="description"
-            class="form-control"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label for="year">Year</label>
-          <textarea
-            required
-            name="year"
-            id="year"
-            class="form-control"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label for="url">URL</label>
-          <textarea
-            required
-            name="url"
-            id="url"
-            class="form-control"
-          ></textarea>
-        </div>
 
+        <div class="container_addMovie">
+          <div class="row">
+            <div class="col-25">
+              <label for="title">Title</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value="<%=movie.title%>"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Year</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="text"
+                id="year"
+                name="year"
+                value="<%=movie.year%>"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="generes">Generes</label>
+            </div>
+            <div class="col-75">
+              <select id="generes" name="generes">
+                <option value="australia">Drama</option>
+                <option value="canada">Romance</option>
+                <option value="usa">Action</option>
+                <option value="usa">Comedy</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="description">Description</label>
+            </div>
+            <div class="col-75">
+              <textarea
+                id="description"
+                name="description"
+                style="height: 200px"
+              >
+<%=movie.description%></textarea
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="url">URL</label>
+            </div>
+            <div class="col-75">
+              <textarea id="url" name="url" style="height: 200px">
+<%=movie.url%></textarea
+              >
+            </div>
+          </div>
+        </div>
         <a href="/" class="btn btn-secondary">Cancel</a>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit">Save</button>
       </form>
     </div>
+
+    <script type="text/javascript" src="../public/app.js"></script>
   </body>
 </html>

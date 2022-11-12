@@ -71,10 +71,11 @@ const editMovie = async (req, res, next) => {
     else {
       console.log("INSIDE EDIT MOVIE!!!! - add redirected page");
 
-      res.status(200).send({
-        status: "OK",
-        _id: updateMovie._id,
-      });
+      res.redirect(`/detailsMovie/${updateMovie._id}`);
+      // res.status(200).send({
+      //   status: "OK",
+      //   _id: updateMovie._id,
+      // });
     }
   } catch (err) {
     res.status(400).send({
