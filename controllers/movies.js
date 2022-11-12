@@ -30,9 +30,11 @@ const addMovie = async (req, res, next) => {
         error: error.message,
       });
     } else {
-      res.status(200).send({
-        status: "OK",
-        _id: movie._id,
+      Movie.find({}, function (err, docs) {
+        if (err) console.log(err);
+        else {
+          res.redirect("/");
+        }
       });
     }
   });
