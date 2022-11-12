@@ -93,23 +93,6 @@ body {
   cursor: pointer; /*the mouse changes to hand(like link)*/
 }
 
-.sidebar {
-  width: 50px;
-  height: 100%;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
-}
-.left-menu-icon {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 40px;
-}
-
 .container {
   background-color: #151515;
   /*height: calc(100vh-50px);*/
@@ -120,22 +103,37 @@ body {
 }
 
 .content-container {
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
 
-.featured-content {
+.featured-content-row {
+  display: list-item;
+  flex-direction: row;
+
+  list-style: none;
+}
+.featured-content-col {
+  display: flex;
+  flex-direction: row;
   height: 50vh;
   padding: 50px;
 }
 
-.featured-title {
-  width: 200px;
+.featured-img {
+  width: 400px;
+  /* padding-left: 50px; */
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .featured-desc {
-  width: 500px;
+  width: 650px;
   color: lightgray;
-  margin: 30px 0;
+  /* 
+  margin: 30px 40px; */
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 50px;
 }
 
 .featured-button {
@@ -150,6 +148,7 @@ body {
 
 .movie-list-title {
   padding-top: 30px;
+  padding-left: 30px;
 }
 
 .movie-list-container {
@@ -195,9 +194,9 @@ body {
 }
 
 .movie-list-item-title {
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.24);
   padding: 0 10px;
-  font-style: 32px;
+  font-size: 24px;
   font-weight: bold;
   position: absolute;
   top: 10%;
@@ -207,13 +206,13 @@ body {
 }
 
 .movie-list-item-desc {
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.24);
   padding: 0 10px;
   font-style: 14px;
   position: absolute;
   top: 30%;
   left: 20px;
-  width: 230px;
+  width: 30px;
   opacity: 0;
   transition: 1s all ease-in-out;
 }
@@ -230,6 +229,7 @@ body {
   bottom: 20px;
   left: 20px;
   opacity: 0;
+  font-weight: bold;
   transition: 1s all ease-in-out;
 }
 
