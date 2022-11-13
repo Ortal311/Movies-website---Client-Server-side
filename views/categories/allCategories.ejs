@@ -71,12 +71,12 @@
 
           <div class="movie-list">
 
-              <% movieList.filter((c)=> c.category == "Drama" && c.isDeleted =="false").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+              <% movieList.filter((c)=> c.category == "Drama" && c.isDeleted ==false).sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
                 <div class="movie-list-item">
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>
                 <p class="movie-list-item-desc"><%= movie.year %></p>
-                <a class="movie-list-item-button" href="./detailsMovie/<%= movie._id %>">Watch</a>
+                <a class="movie-list-item-button" href="./../detailsMovie/<%= movie._id %>">Watch</a>
               </div>
                 <% }) %>
 
@@ -90,12 +90,12 @@
 
           <div class="movie-list">
 
-              <% movieList.filter((c)=> c.category == "Romance" && c.isDeleted =="false").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+              <% movieList.filter((c)=> c.category == "Romance" && c.isDeleted ==false).sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
                 <div class="movie-list-item">
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>
                 <p class="movie-list-item-desc"><%= movie.year %></p>
-                <a class="movie-list-item-button" href="./detailsMovie/<%= movie._id %>">Watch</a>
+                <a class="movie-list-item-button" href="./../detailsMovie/<%= movie._id %>">Watch</a>
               </div>
                 <% }) %>
 
@@ -114,7 +114,7 @@
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>
                 <p class="movie-list-item-desc"><%= movie.year %></p>
-                <a class="movie-list-item-button" href="./detailsMovie/<%= movie._id %>">Watch</a>
+                <a class="movie-list-item-button" href="./../detailsMovie/<%= movie._id %>">Watch</a>
               </div>
                 <% }) %>
 
