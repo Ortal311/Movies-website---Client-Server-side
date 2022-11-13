@@ -32,4 +32,6 @@ router.post("/detailsMovie/:id", Movie.getMovieById);
 
 router.post("/counterPopular/:id", Movie.addPopularity);
 
+router.post("/deleteMovie/:id", Movie.deleteMovie);
+
 module.exports = router;

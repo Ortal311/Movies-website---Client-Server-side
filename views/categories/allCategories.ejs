@@ -52,7 +52,7 @@
 
           <div class="movie-list">
 
-              <% movieList.filter((c)=> c.category == "Action").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+              <% movieList.filter((c)=> c.category == "Action" && c.isDeleted == false ).sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
                 <div class="movie-list-item">
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>
@@ -71,7 +71,7 @@
 
           <div class="movie-list">
 
-              <% movieList.filter((c)=> c.category == "Drama").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+              <% movieList.filter((c)=> c.category == "Drama" && c.isDeleted =="false").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
                 <div class="movie-list-item">
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>
@@ -90,7 +90,7 @@
 
           <div class="movie-list">
 
-              <% movieList.filter((c)=> c.category == "Romance").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+              <% movieList.filter((c)=> c.category == "Romance" && c.isDeleted =="false").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
                 <div class="movie-list-item">
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>
@@ -109,7 +109,7 @@
 
           <div class="movie-list">
 
-              <% movieList.filter((c)=> c.category == "Comedy").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+              <% movieList.filter((c)=> c.category == "Comedy" && c.isDeleted == false).sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
                 <div class="movie-list-item">
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>

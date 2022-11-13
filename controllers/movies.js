@@ -2,7 +2,7 @@ const Movie = require("../models/movie_model");
 const Category = require("../models/category_model");
 
 const getAllMovies = async (req, res, next) => {
-  Movie.find({}, function (err, docs) {
+  Movie.find({ isDeleted: false }, function (err, docs) {
     if (err) console.log(err);
     else {
       // res.status(200).send(docs);
@@ -127,10 +127,55 @@ const addPopularity = async (req, res) => {
   }
 };
 
+const deleteMovie = async (req, res, next) => {
+  try {
+    // const exists = await Post.deleteOne({ _id: req.params.id });
+    const exists = await Movie.updateOne(
+      { _id: req.params.id },
+      { isDeleted: true }
+    );
+
+    const updateMovie = await Movie.findById(req.params.id);
+    if (exists == null) return sendError(res, 400, "post does not exist");
+    else {
+      const findCategory = await Category.findOne({
+        name: updateMovie.category,
+      });
+      findCategory.save(async (error) => {
+        if (error) {
+          res.status(400).send({
+            status: "fail",
+            error: error.message,
+          });
+        } else {
+          await Category.updateOne(
+            { name: updateMovie.category },
+            {
+              $pull: { movies: req.params.id },
+            }
+          );
+        }
+      });
+
+      // res.status(200).send({
+      //   status: "OK",
+      //   movie: updateMovie,
+      // });
+      res.redirect("/");
+    }
+  } catch (err) {
+    res.status(400).send({
+      status: "fail",
+      error: err.message,
+    });
+  }
+};
+
 module.exports = {
   getAllMovies,
   addMovie,
   editMovie,
   getMovieById,
   addPopularity,
+  deleteMovie,
 };
