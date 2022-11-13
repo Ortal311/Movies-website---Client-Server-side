@@ -30,12 +30,14 @@ const addMovie = async (req, res, next) => {
   var description = req.body.description;
   var year = req.body.year;
   var url = req.body.url;
+  var category = req.body.category;
 
   const movie = await Movie({
     title: title,
     description: description,
     year: year,
     url: url,
+    category: category,
   });
 
   await movie.save((error) => {
@@ -64,6 +66,7 @@ const editMovie = async (req, res, next) => {
         description: req.body.description,
         year: req.body.year,
         url: req.body.url,
+        category: req.body.category,
       }
     );
     const updateMovie = await Movie.findById(req.params.id);

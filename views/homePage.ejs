@@ -47,6 +47,7 @@
       <div class="content-container">
         <div class="featured-content-col"
             style="background: linear-gradient(to bottom, rgba(71, 71, 71, 0.123),#151515), url(https://media.istockphoto.com/vectors/modern-cinema-background-realistic-film-strips-in-perspective-wave-vector-id1204686514?b=1&k=20&m=1204686514&s=170667a&w=0&h=Z_xI0ci6Pru6SOD6rDKq6KsncwAHgIqDoN4XVWFAyi4=);">
+            <% if(movieList.length!=0){ %>
             <div class="featured-content-row">
 
               <h1 class="featured-des"><%= movieList[movieList.length-1].title%></h1>
@@ -54,6 +55,7 @@
               <a class="featured-button" href="./detailsMovie/<%= movieList[movieList.length-1]._id %>">READ MORE</a>
             </div>
             <img class="featured-img" src=<%= movieList[movieList.length-1].url%>>
+            <% } %>
         </div>
         
 

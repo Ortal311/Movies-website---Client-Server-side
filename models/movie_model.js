@@ -17,10 +17,10 @@ const movieSchema = new mongoose.Schema({
     type: String,
     default: true,
   },
-  // geners: {
-  //   type: [String],
-  //   require: false,
-  // },
+  category: {
+    type: String,
+    require: true,
+  },
 });
 
 module.exports = mongoose.model("Movie", movieSchema);

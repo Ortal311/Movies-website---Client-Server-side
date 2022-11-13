@@ -18,8 +18,10 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "1mb" }));
 app.use(bodyParser.json());
 
 const movieRouter = require("./routes/movie_routes");
+const categoryRouter = require("./routes/category_routes");
 
 app.use("/", movieRouter);
+app.use("/category", categoryRouter);
 
 app.listen(PORT, () => {
   console.log("app running on port " + PORT);
