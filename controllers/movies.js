@@ -5,7 +5,9 @@ const getAllMovies = async (req, res, next) => {
     if (err) console.log(err);
     else {
       // res.status(200).send(docs);
-      res.status(200).render("homePage.ejs", { movieList: docs });
+      res.status(200).render("homePage.ejs", {
+        movieList: docs,
+      });
     }
   });
 };

@@ -60,12 +60,12 @@
         
 
       <div class="movie-list-container">
-        <h1 class="movie-list-title">NEW RELEASES</h1>
+        <h1 class="movie-list-title">Recently Added</h1>
         <div class="movie-list-wrapper">
 
           <div class="movie-list">
 
-              <% movieList.forEach(movie => { %>
+              <% movieList.sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
                 <div class="movie-list-item">
                 <img class="movie-list-item-img" src=<%=movie.url%>>
                 <span class="movie-list-item-title"><%= movie.title %></span>
