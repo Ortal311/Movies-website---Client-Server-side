@@ -3,7 +3,7 @@
 ## Technologies  🖥
 
  - Server side - NodeJS, Express.
- - Client side - Java Script, Ejs, CSS.
+ - Client side - Java Script, EJS, CSS.
  - DB - Mongoose.
 
 
