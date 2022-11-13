@@ -25,4 +25,6 @@ router.post("/editMovie/:id", Movie.editMovie);
 
 router.post("/detailsMovie/:id", Movie.getMovieById);
 
+router.post("/counterPopular/:id", Movie.addPopularity);
+
 module.exports = router;

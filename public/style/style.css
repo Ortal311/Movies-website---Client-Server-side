@@ -147,26 +147,6 @@ body {
   font-weight: bold;
 }
 
-.edit-button {
-  background-color: #a9afb5;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  font-weight: bold;
-}
-
-.delete-button {
-  background-color: #a81515;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  font-weight: bold;
-}
-
 .movie-list-title {
   padding-top: 30px;
   padding-left: 30px;
@@ -371,4 +351,34 @@ label {
 
 .d-inline {
   padding-top: 20px;
+}
+.edit-button {
+  background-color: #a9afb5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.watch-button {
+  background-color: #0d972d;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.delete-button {
+  background-color: #a81515;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
 }

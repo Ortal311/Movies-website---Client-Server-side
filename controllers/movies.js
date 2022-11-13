@@ -90,9 +90,29 @@ const editMovie = async (req, res, next) => {
   }
 };
 
+const addPopularity = async (req, res) => {
+  try {
+    console.log("inside popular");
+    const movie = await Movie.findById(req.params.id).updateOne(
+      { _id: req.params.id },
+      { $inc: { counterPopular: 1 } }
+    );
+    console.log(movie);
+
+    res.status(200).redirect("/");
+  } catch (err) {
+    console.log(err);
+    // res.status(400).send({
+    //   status: "fail",
+    //   error: err.message,
+    // });
+  }
+};
+
 module.exports = {
   getAllMovies,
   addMovie,
   editMovie,
   getMovieById,
+  addPopularity,
 };

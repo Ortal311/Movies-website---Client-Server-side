@@ -82,10 +82,10 @@
 
 
       <div class="movie-list-container">
-        <h1 class="movie-list-title">POPULAR</h1>
+        <h1 class="movie-list-title">Most Popular</h1>
         <div class="movie-list-wrapper">
           <div class="movie-list">
-            <% movieList.forEach(movie => { %>
+            <% movieList.sort((a, b) => b.counterPopular - a.counterPopular).forEach(movie => { %>
               <div class="movie-list-item">
               <img class="movie-list-item-img" src=<%=movie.url%>>
               <span class="movie-list-item-title"><%= movie.title %></span>
