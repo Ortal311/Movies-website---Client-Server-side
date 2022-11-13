@@ -382,3 +382,10 @@ label {
   outline: none;
   font-weight: bold;
 }
+
+/*******ALL CATEGORIES***************/
+
+.movie-list-title-allCategories {
+  padding-top: 10px;
+  padding-left: 30px;
+}

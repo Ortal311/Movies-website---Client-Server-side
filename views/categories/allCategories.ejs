@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Design</title>
+    <link href= "/public/style/style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  </head>
+  <body>
+    <div class="navbar">
+      <div class ="navbar-container">
+        <div class="logo-container"><h1 class="logo">Metflix</h1></div>
+        <div class="menu-container">
+          <ul class = "menu-list">
+            <li class="menu-list-item" onclick="location.href='/'">Home</li>
+            <li class="menu-list-item" onclick="location.href='/category/allCategories'">Categories</li>
+            <li class="menu-list-item" onclick="location.href='/addMovie'">
+              Add Movie
+            </li>
+          </ul>
+      </div>
+        <div class="profile-container">
+          <img class="profile-picture" src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" alt="">
+          <div class="profile-text-container">
+            <span class=""profile-text>Profile</span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <div class="toggle">
+            <i class="fa-solid fa-moon toggle-icon"></i>
+            <i class="fa-solid fa-sun toggle-icon"></i>
+            <div class="toggle-ball"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+             
+
+      <div class="movie-list-container"
+      style="background: linear-gradient(to bottom, rgba(71, 71, 71, 0.123),#151515), url(https://media.istockphoto.com/vectors/modern-cinema-background-realistic-film-strips-in-perspective-wave-vector-id1204686514?b=1&k=20&m=1204686514&s=170667a&w=0&h=Z_xI0ci6Pru6SOD6rDKq6KsncwAHgIqDoN4XVWFAyi4=);">
+        <h1 class="movie-list-title">Action</h1>
+        <div class="movie-list-wrapper">
+
+          <div class="movie-list">
+
+              <% movieList.filter((c)=> c.category == "Action").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+                <div class="movie-list-item">
+                <img class="movie-list-item-img" src=<%=movie.url%>>
+                <span class="movie-list-item-title"><%= movie.title %></span>
+                <p class="movie-list-item-desc"><%= movie.year %></p>
+                <a class="movie-list-item-button" href="./../detailsMovie/<%= movie._id %>">Watch</a>
+              </div>
+                <% }) %>
+
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </div>
+      </div>
+      <div class="movie-list-container">
+        <h1 class="movie-list-title">Drama</h1>
+        <div class="movie-list-wrapper">
+
+          <div class="movie-list">
+
+              <% movieList.filter((c)=> c.category == "Drama").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+                <div class="movie-list-item">
+                <img class="movie-list-item-img" src=<%=movie.url%>>
+                <span class="movie-list-item-title"><%= movie.title %></span>
+                <p class="movie-list-item-desc"><%= movie.year %></p>
+                <a class="movie-list-item-button" href="./detailsMovie/<%= movie._id %>">Watch</a>
+              </div>
+                <% }) %>
+
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </div>
+      </div>
+      <div class="movie-list-container">
+        <h1 class="movie-list-title">Romance</h1>
+        <div class="movie-list-wrapper">
+
+          <div class="movie-list">
+
+              <% movieList.filter((c)=> c.category == "Romance").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+                <div class="movie-list-item">
+                <img class="movie-list-item-img" src=<%=movie.url%>>
+                <span class="movie-list-item-title"><%= movie.title %></span>
+                <p class="movie-list-item-desc"><%= movie.year %></p>
+                <a class="movie-list-item-button" href="./detailsMovie/<%= movie._id %>">Watch</a>
+              </div>
+                <% }) %>
+
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </div>
+      </div>
+      <div class="movie-list-container">
+        <h1 class="movie-list-title">Comedy</h1>
+        <div class="movie-list-wrapper">
+
+          <div class="movie-list">
+
+              <% movieList.filter((c)=> c.category == "Comedy").sort((a, b) => new Date(b.Date) - new Date(a.Date)).forEach(movie => { %>
+                <div class="movie-list-item">
+                <img class="movie-list-item-img" src=<%=movie.url%>>
+                <span class="movie-list-item-title"><%= movie.title %></span>
+                <p class="movie-list-item-desc"><%= movie.year %></p>
+                <a class="movie-list-item-button" href="./detailsMovie/<%= movie._id %>">Watch</a>
+              </div>
+                <% }) %>
+
+          </div>
+          <i class="fa-solid fa-chevron-right arrow"></i>
+        </div>
+
+     
+    </div>
+ 
+    <script type="text/javascript" src="../public/app.js"></script>
+  </body>
+</html>

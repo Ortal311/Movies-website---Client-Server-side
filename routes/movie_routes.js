@@ -19,6 +19,11 @@ router.get("/detailsMovie/:id", async (req, res) => {
   res.render("movies/detailsMovie.ejs", { movie: movie });
 });
 
+router.get("/allMovies", async (req, res) => {
+  const movies = await MovieModel.find();
+  res.render("movies/allMovies.ejs", { movieList: movies });
+});
+
 router.post("/addMovie", Movie.addMovie);
 
 router.post("/editMovie/:id", Movie.editMovie);
