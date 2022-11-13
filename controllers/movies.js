@@ -1,4 +1,5 @@
 const Movie = require("../models/movie_model");
+const Category = require("../models/category_model");
 
 const getAllMovies = async (req, res, next) => {
   Movie.find({}, function (err, docs) {
@@ -40,6 +41,23 @@ const addMovie = async (req, res, next) => {
     year: year,
     url: url,
     category: category,
+  });
+
+  const findCategory = await Category.findOne({ name: category });
+  findCategory.save(async (error) => {
+    if (error) {
+      res.status(400).send({
+        status: "fail",
+        error: error.message,
+      });
+    } else {
+      await Category.updateOne(
+        { name: category },
+        {
+          $push: { movies: [movie._id] },
+        }
+      );
+    }
   });
 
   await movie.save((error) => {
